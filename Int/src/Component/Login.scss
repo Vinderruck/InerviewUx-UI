@@ -1,0 +1,324 @@
+
+/*LoginStart is the css controlling the whle loging page*/
+.LoginStart{
+justify-content:space-between;
+display: flex; 
+align-items:center;
+background:transparent;
+ 
+ margin:2rem auto;
+width:80%;
+height:auto;
+border-radius:5px;
+ overflow: hidden;
+}
+ 
+
+/*logo section */
+.header{
+justify-content: left;
+position: relative;
+ 
+display:flex;
+ 
+align-items: left;
+margin-left:-16rem;
+
+.welcome{
+
+    font-family: Poppins;
+font-size: 36px;
+font-weight: 500;
+line-height: 48.78px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
+}
+.logo{
+    font-family: Poppins;
+font-size: 46px;
+font-weight: 900;
+line-height: 62.33px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color:#6A5ACD;
+
+}
+
+
+/*media query for sm screen for logo div */
+@media screen and (max-width:550px){
+    margin-left: 0rem;;
+    .welcome{
+        font-size: 30px;
+    }
+    .logo{
+        font-size: 35px;
+    }
+  }
+@media screen and (max-width:1200px){
+  margin-left: 0rem;;
+}
+}
+/*CSS FOR image Illastrator div */
+.ImageDiv{
+    width:30%;
+ height: auto;
+ margin:5rem;
+
+
+ 
+    img{
+        width:100%;
+        height:300px;
+    }
+
+    @media screen and (max-width:1000px){
+        display:none;
+    }
+}
+
+
+/*Css for form alignment*/
+.FormDiv{
+    display:flex;
+    justify-content:space-between;
+    flex-direction:column;
+    width:50%;
+    background-color:#fff;
+    align-items:center;
+    opacity:90%;
+    border-radius:10px;
+    height:auto;
+    margin:1rem;
+
+/*This css s controlling the Form as whole*/
+.LoginForm{
+    width:90%;
+    height:90%;
+   overflow-x:hidden ;
+    margin:auto ;
+    justify-content:center;
+    align-items:center;
+    display:flex;
+    flex-direction:column;
+}
+    /* CSS for google and facebook div inside the form*/
+.Googlediv{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid #ddd;
+    border-radius:5px;
+ width:90%;
+ margin: 2px auto;
+ 
+}
+.Facebookdiv{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid #ddd;
+    width:90%;
+    margin:2px auto;
+    border-radius:5px;
+    
+    
+} 
+
+/*Small screen height for the FormDiv*/
+@media screen and (max-width:1000px){
+    height: auto;
+    margin:auto;
+}
+
+
+
+}
+/*Image class that are  icon*/
+.FormIcon{
+width:20px;
+height:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:0.5rem;
+
+img{
+    width:100%;
+    height:100%;
+    
+}
+
+
+}
+
+
+
+/*Css controlling the two dive for bisecting the form input add faceboo and goole links */
+.BisectingDiv{
+justify-content:center;
+display: flex;
+width:90%;
+align-content:center;
+text-align:center;
+.line{
+    width:50%;
+    height:1px;
+    background-color:#ddd;
+    
+    margin:auto;
+}
+.text{
+    align-items:center;
+    text-align: center;
+    margin:auto 6px;
+}
+
+}
+
+/*Css Controling the Input Groups with Label*/
+.InputGroups{
+display:flex;
+ align-items:center;
+ justify-content:space-between;
+opacity:80%;
+margin:0.2rem;
+ width:100%;
+ background-color: #ddd;
+height:auto;
+border-radius:10px;
+ 
+ 
+/*css controling the div  in the  form Group*/
+.GroupData{
+    display:flex;
+    width:100%;
+  
+   
+    /*Icons inside the in GroupData Class*/
+    .Icons{
+      margin:auto 3px;
+      width:20px;
+      height: 20px;;
+        
+    }
+    
+    }
+
+/*input*/
+ .inpute{
+width:90%;
+border-radius:5px;
+box-sizing: border-box;
+background-color: #ddd;
+color:black;
+opacity: 100%;
+margin:1px;
+  border:none;
+ 
+ }
+ 
+  
+/*css controling the eye in password*/
+.Passwordeye{
+    width:20px;
+    height:20px;
+ margin:auto;
+ position:relative;
+ right:0;
+    }
+}
+
+/* css Controlling thecheck box and forgot password*/
+.Lastspan{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    gap:12rem;
+
+
+
+
+    .checkbox{
+        display:flex;
+        align-items: center;;
+        justify-content: flex-start;
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 21.68px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+     
+        margin:auto;
+    }
+    .forgotPassword{
+        display:flex;
+        align-items: center;;
+        justify-content: flex-end;
+        margin:auto;
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 21.68px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      
+    }
+
+    @media screen and (max-width:701px){
+        gap:1rem;
+        overflow-y: hidden;
+        .forgotPassword{
+            font-size: 14px;  
+        }
+    }
+    @media screen and (min-width:700px) and (max-width:900px){
+        gap:7rem;
+    }
+
+}
+/*css controlling the buton*/
+.Loginbutton{
+    width:90%;
+    background-color:#6A5ACD;
+    opacity: 90%;
+    margin:1rem;
+    height:3rem;
+    border-radius: 10px;
+    color:#fff;
+    font-family: Poppins;
+font-size: 16px;
+font-weight: 600;
+line-height: 21.68px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
+}
+
+
+/*Register link css*/
+.Register{
+display:flex;
+align-items:center;
+justify-content: center;
+ 
+
+span{
+    font-family: Poppins;
+font-size: 16px;
+font-weight: 900;
+line-height: 21.68px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
+}}
+ 
+
