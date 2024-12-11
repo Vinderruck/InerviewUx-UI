@@ -129,11 +129,16 @@ color:#6A5ACD;
 } 
 
 /*Small screen height for the FormDiv*/
-@media screen and (max-width:1000px){
+@media screen and (min-width:700px) and (max-width:1000px){
     height: auto;
     margin:auto;
+    width:80%;
 }
-
+@media screen and   (max-width:701px){
+    height: auto;
+    margin:auto;
+    width:100%;
+}
 
 
 }
