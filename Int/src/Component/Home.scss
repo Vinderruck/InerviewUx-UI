@@ -1,0 +1,124 @@
+
+
+/*Css controling the home dispaly*/
+.Homedisplay{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+width:100%;
+background:#fff;
+
+
+
+
+
+ /*css controlling the section having welcome logo and the profile*/
+ .Profile_welcome{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+   
+      Gap:113px;
+    width:20%;
+   margin-top: -5rem;
+height:auto;
+
+
+&:hover{
+    border:1px solid #6A5ACD;
+    opacity:90%;
+}
+    /*css conrolling the logo heading */
+    .dash{
+        justify-content: left;
+        position: relative;
+         width:100%;
+        display:flex;
+         align-items: center;
+       
+
+        .welcome{
+
+            font-family: Poppins;
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 48.78px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        
+        }
+        .logo{
+            font-family: Poppins;
+        font-size: 46px;
+        font-weight: 900;
+        line-height: 62.33px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        color:#6A5ACD;
+        
+        }
+         
+    }
+    .profile{
+        box-shadow:1px 1px 3px 1px #ddd;
+        width: 90%;
+        display:flex;
+justify-content:center;
+align-items:center;
+height: auto;
+flex-direction:column;
+margin:1rem  auto;
+border-radius:5px;
+gap:1px;
+padding:4px;
+
+&:hover{
+    border:1px solid #6A5ACD;
+    opacity:90%;
+}
+
+/*css for paragraph in the profile area name Email*/
+.paragraph{
+    font-family: "Inter", sans-serif;
+font-size: 16px;
+font-weight: 700;
+line-height: 19.36px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
+}
+/*css for button in the profile ares  llogut button*/
+Button{
+    background-color: #6A5ACD;
+    
+    width:50%;
+     
+    opacity: 90%;
+    margin:1rem;
+    height:3rem;
+    border-radius: 10px;
+    color:#fff;
+    font-family: Poppins;
+font-size: 16px;
+font-weight: 600;
+line-height: 21.68px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+    }
+}
+
+
+@media screen and (max-width:1020px) {
+    width:50%
+}
+        }
+
+
+       
+}
