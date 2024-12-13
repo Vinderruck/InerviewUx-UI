@@ -16,6 +16,8 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [check, setcheck] = useState(false)
+  const [error, seterror] = useState(null)
   const [showPassword, setShowPassword] = useState(false);
 
   // Check if user is already logged in
@@ -29,7 +31,7 @@ const Login = () => {
   // Function handling form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+ 
     // Validation
     if (username !== "emilys") {
       alert("Invalid Username. Only 'emilys' is allowed.");
@@ -71,7 +73,9 @@ const Login = () => {
       navigate('/home'); // Redirect to main page
     } catch (error) {
       console.error("Login error:", error);
-      alert("Login failed. Please check your credentials and try again.");
+    //   alert("Login failed. Please check your credentials and try again.");
+      seterror("Login failed. Please check your credentials and try again.")
+      
     }
   };
 
@@ -171,11 +175,12 @@ const Login = () => {
 
           <span className="Lastspan">
             <span className="checkbox">
-              <Form.Control type="checkbox" />
+              <Form.Control type="checkbox" name="check" value={check} onChange={(e)=> setcheck(!check)} />
               <p>Remember Me</p>
             </span>
             <span className="forgotPassword">Forgot Password?</span>
           </span>
+          <div><p className="paragraph">{error}</p></div>
           <Button type="submit" className="Loginbutton">
             Login
           </Button>
