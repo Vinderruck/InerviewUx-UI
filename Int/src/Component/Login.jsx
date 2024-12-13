@@ -28,12 +28,11 @@ const Login = () => {
  
     // Validation
     if (username !== "emilys") {
-     const timer=  
+     
+        seterror("Invalid Username Refresh and Insert correct username") 
+     
 
-      setInterval(()=>{ 
-        seterror("Invalid Username"),10000
-      }
- )
+    
       return;
     }
 
@@ -73,10 +72,12 @@ const Login = () => {
     } catch (error) {
       console.error("Login error:", error.response?.data || error.message);
     //   alert("Login failed. Please check your credentials and try again.");
-      seterror("Login failed. Please check your credentials and try again.")
-      setTimeout(()=>{
-        seterror("")
-      },3000 )
+      
+    
+        seterror("Login failed. Please check your credentials and try again. please refresh the page first");
+     
+  
+      // Clear the interval after 3 seconds (one cycle)
       
     }
   };
