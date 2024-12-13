@@ -12,8 +12,8 @@ const Home = () => {
 const navigate =useNavigate()
 
 
-    const [UserName, setUserName] = useState(null)
-    const [email, setEmail] = useState(null)
+    const [UserName, setUserName] = useState("User")
+    const [email, setEmail] = useState("Email")
 
     const token = ()=>{
         const token=localStorage.getItem("authToken");
@@ -25,15 +25,16 @@ const navigate =useNavigate()
         try {
           //code todecode the toke
 
-          const Decode=jwtDecode(token)
+          const DecodedToken=jwtDecode(token)
 
 
-          const user =Decode.username || Decode.name
-          const Email = Decode.email || Decode.email
-          setUserName(user)
-          setEmail(Email)
+          const { username,  email } =   DecodedToken;
+
+          // Update state with user details
+          setUserName(username );
+          setEmail(email  );
         } catch (error) {
-          alert("Issue found when decodig the token")
+          alert("Issue found when decoding the token")
         }
         
     }
