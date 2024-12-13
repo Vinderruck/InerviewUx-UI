@@ -1,11 +1,48 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './Home.scss'
 import { prof } from '../assets'
 import {Button} from 'react-bootstrap'
+import { jwtDecode } from "jwt-decode";
+
+import { useNavigate } from 'react-router-dom'
 
 
 
 const Home = () => {
+const navigate =useNavigate()
+
+
+    const [UserName, setUserName] = useState(null)
+    const [email, setEmail] = useState(null)
+
+    const token = ()=>{
+        const token=localStorage.getItem("authToken");
+
+        if(!token){
+            alert("no token available")
+            return
+        }
+        try {
+          //code todecode the toke
+
+          const Decode=jwtDecode(token)
+
+
+          const user =Decode.username || Decode.name
+          const Email = Decode.email || Decode.email
+          setUserName(user)
+          setEmail(Email)
+        } catch (error) {
+          alert("Issue found when decodig the token")
+        }
+        
+    }
+
+    //Log out function 
+    const handleLogOut =()=>{
+        localStorage.removeItem("authToken")
+        navigate("/")
+    }
   return (
     <div className="Homedisplay">
        
@@ -22,10 +59,10 @@ const Home = () => {
   </div>
   <div className="profile">
     <img src={prof}  alt="prof"/>
-    <p className="paragraph">UserName</p>
-    <p className="paragraph">Email</p>
+    <p className="paragraph">{UserName}</p>
+    <p className="paragraph">{email}</p>
     
-    <Button>Logout</Button>
+    <Button onClick={handleLogOut}> Logout</Button>
   </div>
   
   </div>
