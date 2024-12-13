@@ -9,7 +9,7 @@ align-items:center;
 width:100%;
 background:#fff;
 
-
+overflow-y: auto;
 
 
 
@@ -20,8 +20,8 @@ background:#fff;
     justify-content:center;
     align-items:center;
    
-      Gap:113px;
-    width:20%;
+      Gap:10px;
+    width:50%;
    margin-top: -5rem;
 height:auto;
 
@@ -30,12 +30,7 @@ height:auto;
     border:1px solid #6A5ACD;
     opacity:90%;
 }
-@media screen and (max-width:900px){
-    margin-top: -1rem;
-    overflow:hidden;
-    widtn:50%;
-    border:1px solid black;
-}
+
 
     /*css conrolling the logo heading */
     .dash{
@@ -124,7 +119,15 @@ text-decoration-skip-ink: none;
 @media screen and (max-width:1020px) {
     width:50%
 }
-        }
+      
+
+@media screen and (max-width:900px){
+    margin-top: -1rem;
+    overflow:hidden;
+ width:80%;
+    border:1px solid black;
+    height:auto;
+}}
 
 
        
