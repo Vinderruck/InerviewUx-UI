@@ -30,6 +30,13 @@ height:auto;
     border:1px solid #6A5ACD;
     opacity:90%;
 }
+@media screen and (max-width:900px){
+    margin-top: -1rem;
+    overflow:hidden;
+    widtn:50%;
+    border:1px solid black;
+}
+
     /*css conrolling the logo heading */
     .dash{
         justify-content: left;
