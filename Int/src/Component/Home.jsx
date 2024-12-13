@@ -5,6 +5,7 @@ import {Button} from 'react-bootstrap'
 import { jwtDecode } from "jwt-decode";
 
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react';
 
 
 
@@ -15,29 +16,37 @@ const navigate =useNavigate()
     const [UserName, setUserName] = useState("User")
     const [email, setEmail] = useState("Email")
 
-    const token = ()=>{
-        const token=localStorage.getItem("authToken");
 
-        if(!token){
-            alert("no token available")
-            return
-        }
-        try {
-          //code todecode the toke
+    
+useEffect(() => {
+  const token = ()=>{
+    const token=localStorage.getItem("authToken");
 
-          const DecodedToken=jwtDecode(token)
-
-
-          const { username,  email } =   DecodedToken;
-
-          // Update state with user details
-          setUserName(username );
-          setEmail(email  );
-        } catch (error) {
-          alert("Issue found when decoding the token")
-        }
-        
+    if(!token){
+        alert("no token available")
+        return
     }
+    try {
+      //code todecode the toke
+
+      const DecodedToken=jwtDecode(token)
+ 
+
+      const { username,  email } =   DecodedToken;
+
+      // Update state with user details
+      setUserName(username );
+      setEmail(email  );
+    } catch (error) {
+      alert("Issue found when decoding the token")
+    }
+    
+}
+token()
+  
+}, [])
+
+   
 
     //Log out function 
     const handleLogOut =()=>{

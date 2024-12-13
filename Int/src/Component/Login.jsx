@@ -20,13 +20,7 @@ const Login = () => {
   const [error, seterror] = useState(null)
   const [showPassword, setShowPassword] = useState(false);
 
-  // Check if user is already logged in
-  useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    if (token) {
-      navigate('/home'); // Redirect to home if token exists
-    }
-  }, [navigate]);
+
 
   // Function handling form submission
   const handleSubmit = async (e) => {
@@ -34,7 +28,12 @@ const Login = () => {
  
     // Validation
     if (username !== "emilys") {
-      alert("Invalid Username. Only 'emilys' is allowed.");
+     const timer=  
+
+      setInterval(()=>{ 
+        seterror("Invalid Username"),10000
+      }
+ )
       return;
     }
 
@@ -72,9 +71,12 @@ const Login = () => {
       alert("Login successful!");
       navigate('/home'); // Redirect to main page
     } catch (error) {
-      console.error("Login error:", error);
+      console.error("Login error:", error.response?.data || error.message);
     //   alert("Login failed. Please check your credentials and try again.");
       seterror("Login failed. Please check your credentials and try again.")
+      setTimeout(()=>{
+        seterror("")
+      },3000 )
       
     }
   };
@@ -130,7 +132,7 @@ const Login = () => {
                   placeholder="Enter your name"
                   className="inpute inputtext"
                   value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  onChange={(e) => setUsername(e.target.value)} required
                 />
               </Form.Label>
             </div>
@@ -148,7 +150,7 @@ const Login = () => {
                   className="inpute inputtext"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                />
+              required  />
               </Form.Label>
             </div>
           </Form.Group>
@@ -164,7 +166,7 @@ const Login = () => {
                   placeholder="Enter your Password"
                   className="inpute inputtext"
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => setPassword(e.target.value)} required
                 />
               </Form.Label>
             </div>
@@ -175,7 +177,7 @@ const Login = () => {
 
           <span className="Lastspan">
             <span className="checkbox">
-              <Form.Control type="checkbox" name="check" value={check} onChange={(e)=> setcheck(!check)} />
+              <Form.Control type="checkbox" name="check" value={check} onChange={(e)=> setcheck(!check)} requred />
               <p>Remember Me</p>
             </span>
             <span className="forgotPassword">Forgot Password?</span>
