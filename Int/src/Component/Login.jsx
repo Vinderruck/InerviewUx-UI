@@ -86,7 +86,9 @@ const Login = () => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-
+const Temprologin =()=>{
+  navigate('/home')
+}
   return (
     <div className="LoginStart">
       <div className="ImageDiv">
@@ -184,7 +186,7 @@ const Login = () => {
             <span className="forgotPassword">Forgot Password?</span>
           </span>
           <div><p className="paragraph">{error}</p></div>
-          <Button type="submit" className="Loginbutton">
+          <Button  onClick={Temprologin } className="Loginbutton">
             Login
           </Button>
 
